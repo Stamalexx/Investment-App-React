@@ -16,9 +16,9 @@ export default function Result({
   duration,
 }) {
   const data = calculateInvestmentResults({
-    initialInvestment: initialInvestment,
-    annualInvestment: 300,
-    expectedReturn: 5.5,
+    initialInvestment: 10000, //10000
+    annualInvestment: 300, //300
+    expectedReturn: expectedReturn,
     duration: duration,
   });
 
