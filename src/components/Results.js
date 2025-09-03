@@ -30,13 +30,15 @@ export default function Result({
             <li key={item}>{item}</li>
           ))}
         </ul>
+      </div>
+      <div id="resultlistnumbers">
         {data.map((entry) => (
           <ul key={entry.year}>
-            <li>{entry.year}</li>
-            <li>{formatter.format(entry.valueEndOfYear)}</li>
-            <li>{formatter.format(entry.interest)}</li>
-            <li>{formatter.format(entry.totalIntrest)}</li>
-            <li>{formatter.format(entry.investedCapital)}</li>
+            <ul>{entry.year}</ul>
+            <ul>{formatter.format(entry.valueEndOfYear)}</ul>
+            <ul>{formatter.format(entry.interest)}</ul>
+            <ul>{formatter.format(entry.totalIntrest)}</ul>
+            <ul>{formatter.format(entry.investedCapital)}</ul>
           </ul>
         ))}
       </div>

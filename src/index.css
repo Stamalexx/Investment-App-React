@@ -89,6 +89,12 @@ body {
   list-style: none;
   padding: 0;
 }
+#resultlistnumbers ul {
+  display: flex;
+  gap: 6rem;
+  list-style: none;
+  padding: 0;
+}
 
 .center {
   text-align: center;
