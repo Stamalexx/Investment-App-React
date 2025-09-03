@@ -15,14 +15,14 @@ export default function UserInput({
           <label>Initial Investment</label>
           <input
             value={initialInvestment}
-            onChange={(e) => setInitialInvestment(e.target.value)}
+            onChange={(e) => setInitialInvestment(Number(e.target.value))}
           />
         </p>
         <p>
           <label>Annual Investment</label>
           <input
             value={annualInvestment}
-            onChange={(e) => setAnnualInvestment(e.target.value)}
+            onChange={(e) => setAnnualInvestment(Number(e.target.value))}
           />
         </p>
       </div>
@@ -39,7 +39,7 @@ export default function UserInput({
           <label>Duration</label>
           <input
             value={duration}
-            onChange={(e) => setDuration(e.target.value)}
+            onChange={(e) => setDuration(Number(e.target.value))}
           />
         </p>
       </div>

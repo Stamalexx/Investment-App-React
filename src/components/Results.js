@@ -16,8 +16,8 @@ export default function Result({
   duration,
 }) {
   const data = calculateInvestmentResults({
-    initialInvestment: 10000, //10000
-    annualInvestment: 300, //300
+    initialInvestment: initialInvestment,
+    annualInvestment: annualInvestment,
     expectedReturn: expectedReturn,
     duration: duration,
   });
@@ -35,7 +35,8 @@ export default function Result({
             <li>{entry.year}</li>
             <li>{formatter.format(entry.valueEndOfYear)}</li>
             <li>{formatter.format(entry.interest)}</li>
-            <li>{formatter.format(entry.annualInvestment)}</li>
+            <li>{formatter.format(entry.totalIntrest)}</li>
+            <li>{formatter.format(entry.investedCapital)}</li>
           </ul>
         ))}
       </div>
