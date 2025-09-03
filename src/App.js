@@ -4,6 +4,7 @@ import Results from "./components/Results";
 import { useState } from "react";
 
 function App() {
+  //state up
   const [initialInvestment, setInitialInvestment] = useState(12000);
   const [annualInvestment, setAnnualInvestment] = useState(1000);
   const [expectedReturn, setExpectedReturn] = useState(5);
@@ -26,7 +27,12 @@ function App() {
           />
         </section>
         <section id="results">
-          <Results />
+          <Results
+            initialInvestment={initialInvestment}
+            annualInvestment={annualInvestment}
+            expectedReturn={expectedReturn}
+            duration={duration}
+          />
         </section>
       </main>
     </>

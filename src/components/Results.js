@@ -1,4 +1,5 @@
 import "../index.css";
+import { calculateInvestmentResults, formatter } from "../util/investment.js";
 
 const result_content = [
   "Year",
@@ -8,7 +9,19 @@ const result_content = [
   "Invested Capital",
 ];
 
-export default function Result() {
+export default function Result({
+  initialInvestment,
+  expectedReturn,
+  annualInvestment,
+  duration,
+}) {
+  const data = calculateInvestmentResults({
+    initialInvestment: initialInvestment,
+    annualInvestment: 300,
+    expectedReturn: 5.5,
+    duration: duration,
+  });
+
   return (
     <section id="result">
       <div id="resultlist">
@@ -17,6 +30,14 @@ export default function Result() {
             <li key={item}>{item}</li>
           ))}
         </ul>
+        {data.map((entry) => (
+          <ul key={entry.year}>
+            <li>{entry.year}</li>
+            <li>{formatter.format(entry.valueEndOfYear)}</li>
+            <li>{formatter.format(entry.interest)}</li>
+            <li>{formatter.format(entry.annualInvestment)}</li>
+          </ul>
+        ))}
       </div>
     </section>
   );
